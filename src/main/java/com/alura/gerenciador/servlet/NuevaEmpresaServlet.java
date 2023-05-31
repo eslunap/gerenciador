@@ -19,7 +19,7 @@ public class NuevaEmpresaServlet extends HttpServlet {
 		Empresa empresa = new Empresa();
 		empresa.setNombre(nombreEmpresa);
 		
-		DB baseDeDatos = new DB();
+		DB baseDeDatos = new DB(); 
 		baseDeDatos.agregarEmpresa(empresa);
 		
 		//Llamar al jsp
