@@ -20,6 +20,7 @@ public class NuevaEmpresaServlet extends HttpServlet {
 		
 		String nombreEmpresa = request.getParameter("nombre");
 		String paramFechaApertura = request.getParameter("fecha");
+		
 		Date fechaApertura = null;
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
@@ -35,10 +36,17 @@ public class NuevaEmpresaServlet extends HttpServlet {
 		DB baseDeDatos = new DB(); 
 		baseDeDatos.agregarEmpresa(empresa);
 		
-		//Llamar al jsp
-		RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
 		request.setAttribute("nombreEmpresa", empresa.getNombre());
-		rd.forward(request, response);
+
+		//redireccionamiento al navegador
+		response.sendRedirect("listaEmpresas");
+		
+		//Llamar al jsp
+		/*
+		 * RequestDispatcher rd = request.getRequestDispatcher("/listaEmpresas");
+		 * request.setAttribute("nombreEmpresa", empresa.getNombre());
+		 * rd.forward(request, response);
+		 */
 		
 		/*
 		 * PrintWriter out = response.getWriter(); out.println("<html>" + "<body>" +
