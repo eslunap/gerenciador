@@ -10,15 +10,16 @@
 <title>Java Standard Taglib</title>
 </head>
 <body>
-		<c:if test="${ not empty nombreEmpresa }">
-		Empresa ${nombreEmpresa} registrada! <br/>
-		</c:if>
+	<c:if test="${ not empty nombreEmpresa }">
+	Empresa ${nombreEmpresa} registrada! <br/>
+	</c:if>
 	Lista de empresas: <br />
 	
 	<ul>
 		<c:forEach items="${listaEmpresas}" var="empresa">
 		
 			<li>${ empresa.nombre } - <fmt:formatDate value="${empresa.fechaApertura}" pattern="dd/MM/yyyy"/>
+			<a href="/gerenciador/mostrarEmpresa?=${ empresa.id }">modificar</a>
 			<a href="/gerenciador/eliminarEmpresa?=${ empresa.id }">eliminar</a>
 			</li>
 		</c:forEach>
