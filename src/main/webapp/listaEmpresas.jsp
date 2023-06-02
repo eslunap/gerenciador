@@ -15,7 +15,7 @@
 	<ul>
 		<c:forEach items="${listaEmpresas}" var="empresa">
 		
-			<li>${ empresa.nombre } - ${ empresa.fechaApertura }</li>
+			<li>${ empresa.nombre } - <fmt:formatDate value="${empresa.fechaApertura}"/></li>
 		</c:forEach>
 	</ul>
 </body>
