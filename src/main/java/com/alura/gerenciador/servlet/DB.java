@@ -6,11 +6,14 @@ import java.util.List;
 public class DB {
 
 	private static List<Empresa> listaEmpresas = new ArrayList<>();
+	private static Integer llaveSecuencial = 1;
 	
 	static {
 		Empresa empresa = new Empresa();
+		empresa.setId(DB.llaveSecuencial++);
 		empresa.setNombre("Alura");
 		Empresa empresa2 = new Empresa();
+		empresa2.setId(DB.llaveSecuencial++);
 		empresa2.setNombre("Caelum");
 		
 		listaEmpresas.add(empresa);
@@ -18,6 +21,7 @@ public class DB {
 	}
 	
 	public void agregarEmpresa(Empresa empresa) {
+		empresa.setId(DB.llaveSecuencial++);
 		DB.listaEmpresas.add(empresa);		
 	}
 	
