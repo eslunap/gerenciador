@@ -6,7 +6,7 @@ public class Empresa {
 	
 	private Integer id;
 	private String nombre;
-	private Date fechaApertura;
+	private Date fechaApertura = new Date();
 	
 	public Integer getId() {
 		return id;
