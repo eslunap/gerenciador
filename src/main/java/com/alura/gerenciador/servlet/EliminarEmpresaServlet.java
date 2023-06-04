@@ -11,10 +11,11 @@ public class EliminarEmpresaServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String paramId = request.getParameter("id");		
+		String paramId = request.getParameter("Id"); System.out.println("paramId " + paramId);
 		Integer id = Integer.valueOf(paramId);
-		
+		 
 		System.out.println(id);
+		
 		
 		DB db = new DB();
 		db.eliminarEmpresa(id);
