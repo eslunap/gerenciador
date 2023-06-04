@@ -14,19 +14,19 @@ public class ModificarEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-System.out.println("Empresa modificada");
+		System.out.println("Empresa modificada");
 		
 		String nombreEmpresa = request.getParameter("nombre");
-		String paramFechaAbertura = request.getParameter("fecha");
+		String paramFechaApertura = request.getParameter("fecha");
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
 		
 		System.out.println(id);
 		
-		Date fechaAbertura = null;
+		Date fechaApertura = null;
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-			fechaAbertura = sdf.parse(paramFechaAbertura);
+			fechaApertura = sdf.parse(paramFechaApertura);
 		} catch (ParseException e) {
 			throw new ServletException(e);
 		}
@@ -34,7 +34,7 @@ System.out.println("Empresa modificada");
 		DB db = new DB();
 		Empresa empresa = db.buscarEmpresaPorId(id);
 		empresa.setNombre(nombreEmpresa);
-		empresa.setFechaApertura(fechaAbertura);
+		empresa.setFechaApertura(fechaApertura);
 		
 		response.sendRedirect("listaEmpresas");
 	}
