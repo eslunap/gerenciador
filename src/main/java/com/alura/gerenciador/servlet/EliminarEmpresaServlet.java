@@ -11,7 +11,7 @@ public class EliminarEmpresaServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String paramId = request.getParameter("Id"); System.out.println("paramId " + paramId);
+		String paramId = request.getParameter("id"); System.out.println("paramId " + paramId);
 		Integer id = Integer.valueOf(paramId);
 		 
 		System.out.println(id);
